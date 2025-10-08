@@ -1,9 +1,9 @@
--- Insertar datos de muestra
+-- Insertar primer registro
 INSERT INTO data_types_demo (
     name, description, price, discount, launch_date, ip_address,
     mac_address, tags, metadata, coordinates, file_data
 ) VALUES (
-    'iPhone 17 pro',
+    'Smartphone X',
     'Teléfono inteligente de última generación',
     799.99,
     0.10,
@@ -11,9 +11,9 @@ INSERT INTO data_types_demo (
     '192.168.1.10',
     '08:00:2b:01:02:03',
     ARRAY['tech', 'mobile', 'new'],
-    '{"brand": "Apple", "warranty": "2 years"}',
+    '{"brand": "TechCorp", "warranty": "2 years"}',
     '(40.7128, -74.0060)',
-    decode('48656c6c6f20576f726c64', 'hex') -- "Hello World"
+    decode('48656c6c6f20576f726c64', 'hex')
 );
 
 -- Insertar segundo registro
@@ -21,7 +21,7 @@ INSERT INTO data_types_demo (
     name, description, price, discount, launch_date, ip_address,
     mac_address, tags, metadata, coordinates, file_data
 ) VALUES (
-    'Gaming hp Victus Laptop',
+    'Laptop Z',
     'Portátil de alto rendimiento para profesionales creativos',
     1299.50,
     0.15,
@@ -31,5 +31,5 @@ INSERT INTO data_types_demo (
     ARRAY['tech', 'laptop', 'design'],
     '{"brand": "CreativeWare", "color": "silver", "battery": "8h"}',
     '(34.0522, -118.2437)',
-    decode('506f72746174696c2044617461', 'hex') -- "Portatil Data"
+    decode('506f72746174696c2044617461', 'hex')
 );
