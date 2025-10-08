@@ -9,9 +9,10 @@ SQL_FILE_PATH = "03_query_data.sql"
 class TestDataTypesDemo(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        # Configuración de conexión corregida - usar parámetros nombrados correctamente
         cls.conn = psycopg2.connect(
             dbname="test_db",
-            user="postgres",
+            user="postgres", 
             password="postgres",
             host="localhost",
             port="5432"
