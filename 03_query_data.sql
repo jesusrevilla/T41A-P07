@@ -1,3 +1,5 @@
+CREATE TABLE prueba_regex (equis INT);
+
 SELECT name, price, metadata->>'brand' AS brand FROM data_types_demo WHERE available = TRUE AND metadata ? 'brand';
 
 SELECT name, launch_date FROM data_types_demo WHERE launch_date > '2024-12-31';
