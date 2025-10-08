@@ -1,6 +1,8 @@
 
 -- 01 Crear la tabla con los atributos correspondientes
 
+DROP TABLE IF EXISTS data_types_demo;
+
 CREATE TABLE data_types_demo (
     id SERIAL PRIMARY KEY,
     name VARCHAR NOT NULL,
