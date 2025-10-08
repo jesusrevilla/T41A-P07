@@ -3,7 +3,7 @@ CREATE TABLE data_types_demo (
     name VARCHAR(100) NOT NULL,
     description TEXT,
     price NUMERIC(10,2),
-    discount FLOAT,
+    discount REAL,
     available BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT NOW(),
     launch_date DATE,
