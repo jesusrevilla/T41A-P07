@@ -1,1 +1,81 @@
-
+-- Insertar datos de muestra
+INSERT INTO data_types_demo (
+    name, description, price, discount, available, 
+    launch_date, uuid_col, ip_address, mac_address, 
+    tags, metadata, coordinates, file_data
+) VALUES 
+(
+    'Laptop Gamer',
+    'Laptop de alto rendimiento para gaming',
+    1299.99,
+    0.15,
+    TRUE,
+    '2024-01-15',
+    'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11'::UUID,
+    '192.168.1.100',
+    '08:00:27:12:34:56',
+    ARRAY['gaming', 'tecnologia', 'portatil'],
+    '{"brand": "ASUS", "ram": "16GB", "storage": "1TB SSD", "processor": "Intel i7"}'::JSONB,
+    POINT(40.7128, -74.0060),
+    E'\\x4C6F72656D20697073756D20646F6C6F722073697420616D6574'::BYTEA
+),
+(
+    'Smartphone Pro',
+    'Teléfono inteligente de última generación',
+    899.50,
+    0.10,
+    TRUE,
+    '2024-02-20',
+    'b1ffc99-9c0b-4ef8-bb6d-6bb9bd380a22'::UUID,
+    '10.0.0.50',
+    '08:00:27:AB:CD:EF',
+    ARRAY['movil', 'tecnologia', 'comunicacion'],
+    '{"brand": "Samsung", "storage": "256GB", "camera": "108MP", "battery": "5000mAh"}'::JSONB,
+    POINT(34.0522, -118.2437),
+    E'\\x536D61727470686F6E652064617461'::BYTEA
+),
+(
+    'Tablet Basic',
+    'Tablet para uso general y educativo',
+    299.99,
+    0.05,
+    FALSE,
+    '2023-12-10',
+    'c2eecc99-9c0b-4ef8-bb6d-6bb9bd380a33'::UUID,
+    '172.16.0.25',
+    '08:00:27:78:90:12',
+    ARRAY['tablet', 'educacion', 'entretenimiento'],
+    '{"brand": "Lenovo", "screen": "10.1inch", "ram": "4GB", "storage": "64GB"}'::JSONB,
+    POINT(51.5074, -0.1278),
+    E'\\x5461626C65742066696C652064617461'::BYTEA
+),
+(
+    'Smart Watch',
+    'Reloj inteligente con monitor de salud',
+    199.99,
+    0.20,
+    TRUE,
+    '2024-03-05',
+    'd3ffd99-9c0b-4ef8-bb6d-6bb9bd380a44'::UUID,
+    '192.168.0.75',
+    '08:00:27:34:56:78',
+    ARRAY['wearable', 'salud', 'tecnologia'],
+    '{"brand": "Apple", "features": ["heart rate", "sleep tracking", "GPS"], "battery_life": "18h"}'::JSONB,
+    POINT(48.8566, 2.3522),
+    E'\\x57617463682062696E6172792064617461'::BYTEA
+),
+(
+    'Auriculares Inalámbricos',
+    'Auriculares con cancelación de ruido',
+    249.99,
+    0.12,
+    TRUE,
+    '2024-01-30',
+    'e4eed99-9c0b-4ef8-bb6d-6bb9bd380a55'::UUID,
+    '10.1.1.100',
+    '08:00:27:9A:BC:DE',
+    ARRAY['audio', 'inalambrico', 'musica'],
+    '{"brand": "Sony", "battery": "30h", "noise_cancelling": true, "water_resistant": true}'::JSONB,
+    POINT(35.6762, 139.6503),
+    E'\\x417564696F206465766963652064617461'::BYTEA
+);
