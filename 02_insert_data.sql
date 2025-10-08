@@ -1,1 +1,76 @@
-
+-- Insertar 4 registrode
+INSERT INTO data_types_demo (
+    name, 
+    description, 
+    price, 
+    discount, 
+    available, 
+    launch_date, 
+    uuid_col, 
+    ip_address, 
+    mac_address, 
+    tags, 
+    metadata, 
+    coordinates, 
+    file_data
+) VALUES 
+(
+    'Laptop Gamer Pro',
+    'Laptop de alto rendimiento para gaming',
+    1299.99,
+    0.15,
+    TRUE,
+    '2024-01-15',
+    'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11',
+    '192.168.1.100',
+    '08:00:27:89:45:AB',
+    ARRAY['gaming', 'electronics', 'computers'],
+    '{"brand": "GamingTech", "model": "GTX-5000", "specs": {"ram": "16GB", "storage": "1TB SSD"}}',
+    POINT(40.7128, -74.0060),
+    E'\\x48656C6C6F20576F726C64' -- "Hello World" en hexadecimal
+),
+(
+    'Smartphone Ultra',
+    'Teléfono inteligente con cámara avanzada',
+    899.50,
+    0.10,
+    TRUE,
+    '2024-02-20',
+    'b1ffc99-9c0b-4ef8-bb6d-6bb9bd380a12',
+    '10.0.0.50',
+    '08:00:27:90:CD:EF',
+    ARRAY['mobile', 'electronics', 'camera'],
+    '{"brand": "PhoneMaster", "model": "Ultra-X", "specs": {"camera": "108MP", "battery": "5000mAh"}}',
+    POINT(34.0522, -118.2437),
+    E'\\x546573742044617461' 
+),
+(
+    'Tablet Basic',
+    'Tablet para uso general y educación',
+    299.99,
+    0.05,
+    FALSE,
+    '2023-12-10',
+    'c2eecc99-9c0b-4ef8-bb6d-6bb9bd380a13',
+    '172.16.254.1',
+    '08:00:27:78:34:56',
+    ARRAY['tablet', 'education', 'budget'],
+    '{"brand": "EduTech", "model": "LearnPad", "specs": {"screen": "10.1inch", "storage": "64GB"}}',
+    POINT(51.5074, -0.1278),
+    E'\\x42696E6172792046696C65' 
+),
+(
+    'Smart Watch Pro',
+    'Reloj inteligente con monitor de salud',
+    349.75,
+    0.20,
+    TRUE,
+    '2024-03-05',
+    'd3ffcc99-9c0b-4ef8-bb6d-6bb9bd380a14',
+    '192.168.0.200',
+    '08:00:27:AB:12:CD',
+    ARRAY['wearable', 'health', 'fitness'],
+    '{"brand": "FitTech", "model": "HealthPro", "specs": {"heart_rate": true, "gps": true}}',
+    POINT(48.8566, 2.3522),
+    E'\\x57617463682044617461' 
+);
