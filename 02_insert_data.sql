@@ -14,4 +14,3 @@ VALUES
  '172.16.0.8', '11:22:33:44:55:66', ARRAY['accessories','featured'], '{"brand":"QuickNet","color":"black"}', POINT(20.67, -103.35), E'\\x00112233'),
 ('AP Lite', 'Punto de acceso Wi-Fi interior', 1799.00, 0.05, TRUE, NOW() - INTERVAL '10 days', DATE '2025-01-30', 'ffffffff-1111-2222-3333-444444444444',
  '2001:db8::1', 'AB:CD:EF:12:34:56', ARRAY['wifi','enterprise'], '{"brand":"AeroWave","poe":true}', POINT(21.16, -86.85), E'\\xFACEFEED');
-
