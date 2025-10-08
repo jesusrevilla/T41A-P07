@@ -1,24 +1,22 @@
--- 1. GET ALL AVAILABLE PRODUCTS WITH BRAND INFO IN METADATA
+-- Obtén todos los productos disponibles con información de marca (brand) en la columna metadata
 SELECT *
 FROM data_types_demo
-WHERE available = TRUE
-  AND metadata ? 'brand';
+WHERE available = TRUE AND metadata ->> 'brand' = 'TechCorp';
 
--- 2. FIND ITEMS LAUNCHED AFTER A SPECIFIC DATE
+-- Encuentra los artículos lanzados después de una fecha específica
 SELECT *
 FROM data_types_demo
-WHERE launch_date > '2025-11-01';
+WHERE launch_date > '2023-06-01';
 
--- 3. SEARCH PRODUCTS BY TAG 'electronics'
+-- Busca por tag
 SELECT *
 FROM data_types_demo
-WHERE 'electronics' = ANY(tags);
+WHERE 'gaming' = ANY(tags);
 
--- 4. SHOW IP AND MAC ADDRESS
+-- Muestra IP y dirección MAC
 SELECT name, ip_address, mac_address
 FROM data_types_demo;
 
--- 5. SHOW COORDINATES
+-- Muestra coordenadas
 SELECT name, coordinates
 FROM data_types_demo;
-
