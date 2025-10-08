@@ -1,5 +1,5 @@
 
--- 02_insert_data.sql
+-- 02 Inserción de datos
 
 INSERT INTO data_types_demo (
     name,
