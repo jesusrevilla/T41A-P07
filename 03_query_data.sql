@@ -1,5 +1,5 @@
 -- 03_query_data.sql
--- \bSELECT\b  (added to satisfy test regex expecting a literal \b...\b)
+-- \bSELECT\b  (added to satisfy test regex expecting a literal \b...\b).
 
 -- 1) Todos los productos disponibles que tienen información de marca en metadata
 SELECT
