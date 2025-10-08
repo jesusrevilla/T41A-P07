@@ -7,7 +7,7 @@ CREATE TABLE data_types_demo (
     available BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT NOW(),
     launch_date DATE,
-    uuid_col UUID DEFAULT gen_random_uuid(),
+    uuid_col UUID,
     ip_address INET,
     mac_address MACADDR,
     tags TEXT[],
