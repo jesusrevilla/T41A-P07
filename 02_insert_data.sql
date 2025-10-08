@@ -2,7 +2,7 @@ INSERT INTO data_types_demo
 (name, description, price, discount, available, launch_date, uuid_col, ip_address, mac_address, tags, metadata, coordinates, file_data)
 VALUES
 -- 1) Disponible + brand
-('Laptop Mackbook Pro', 'Ultrabook de aluminio', 2499.99, 0.10, TRUE, '2025-02-15',
+('Laptop Mackbook Pro', 'Ultrabook de aluminio', 2499.99, 0.10, TRUE, '2025-10-07',
  '550e8400-e29b-41d4-a716-446655440000', '192.168.1.10', 'AA:BB:CC:DD:EE:01',
  ARRAY['electronics','laptop','office'], '{"brand":"TechBrand","warranty":12}'::jsonb,
  '(45.12,-93.5)', '\xDEADBEEF'),
