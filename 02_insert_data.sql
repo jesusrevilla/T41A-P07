@@ -1,6 +1,5 @@
 
--- 02 Inserción de datos
-
+-- Insertar 2 registros de ejemplo
 INSERT INTO data_types_demo (
     name,
     description,
@@ -15,52 +14,36 @@ INSERT INTO data_types_demo (
     metadata,
     coordinates,
     file_data
-)
-VALUES
+) VALUES
 (
-    'Super Widget',
-    'Un producto con múltiples tipos de datos',
-    199.99,
-    10.5,
+    'Producto A',
+    'Descripción del producto A',
+    100.00,
+    5.5,
     TRUE,
-    '2025-09-15',
-    '550e8400-e29b-41d4-a716-446655440000',
-    '192.168.1.1',
+    '2025-01-01',
+    '123e4567-e89b-12d3-a456-426614174000',
+    '192.168.0.1',
     'AA:BB:CC:DD:EE:FF',
-    ARRAY['nuevo', 'promocion', 'tecnologia'],
-    '{"brand": "TechCorp", "warranty": "2 years"}',
-    '(10.5,20.7)',
+    ARRAY['nuevo', 'promocion'],
+    '{"marca": "MarcaA", "garantia": "2 años"}',
+    '(10.5, 20.5)',
     decode('DEADBEEF', 'hex')
 ),
 (
-    'Mega Gadget',
-    'Producto avanzado para usuarios exigentes',
-    349.50,
-    15.0,
-    TRUE,
-    '2025-10-01',
-    '660e8400-e29b-41d4-a716-446655441111',
-    '10.0.0.5',
-    'BB:CC:DD:EE:FF:00',
-    ARRAY['oferta', 'tecnologia'],
-    '{"brand": "GadgetPro", "warranty": "3 years"}',
-    '(15.2,25.8)',
-    decode('ABCDEF01', 'hex')
-),
-(
-    'Basic Tool',
-    'Herramienta básica para uso cotidiano',
-    49.99,
-    5.0,
+    'Producto B',
+    'Descripción del producto B',
+    200.00,
+    10.0,
     FALSE,
-    '2024-12-20',
-    '770e8400-e29b-41d4-a716-446655442222',
-    '172.16.0.3',
-    'CC:DD:EE:FF:00:11',
-    ARRAY['herramienta', 'basico'],
-    '{"brand": "ToolCorp", "warranty": "1 year"}',
-    '(5.0,10.0)',
-    decode('12345678', 'hex')
+    '2025-06-01',
+    '123e4567-e89b-12d3-a456-426614174001',
+    '10.0.0.1',
+    'FF:EE:DD:CC:BB:AA',
+    ARRAY['oferta', 'tecnologia'],
+    '{"marca": "MarcaB", "garantia": "1 año"}',
+    '(15.0, 25.0)',
+    decode('BEEFDEAD', 'hex')
 );
 
 
