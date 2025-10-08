@@ -1,1 +1,5 @@
-
+INSERT INTO data_types_demo (name, description, price, discount, available, launch_date, uuid_col, ip_address, mac_address, tags, metadata, coordinates, file_data) VALUES
+('Laptop', 'Una laptop potente para profesionales', 1499.99, 0.10, TRUE, '2023-05-15', gen_random_uuid(), '192.168.1.10', '08:00:27:01:23:45', ARRAY['electronica', 'computadora', 'trabajo'], '{"brand": "TechCorp", "specs": {"ram": "16GB", "storage": "512GB SSD"}}', POINT(10.1, 20.2), E'\\xDEADBEEF'),
+('Teclado', 'Teclado con switches mecánicos para gaming', 120.50, 0.05, TRUE, '2023-08-20', gen_random_uuid(), '192.168.1.12', '00:1A:2B:3C:4D:5E', ARRAY['gaming', 'periferico', 'computadora'], '{"brand": "GamerGear", "switches": "Blue"}', POINT(-5.5, 15.8), E'\\xCAFEF00D'),
+('Monitor', 'Monitor de 27 pulgadas con resolución 4K', 450.00, 0.0, FALSE, '2022-11-01', gen_random_uuid(), '192.168.1.15', 'A1:B2:C3:D4:E5:F6', ARRAY['electronica', 'monitor'], '{"brand": "ViewSharp", "resolution": "3840x2160"}', POINT(40.7, -74.0), E'\\x12345678'),
+('Webcam', 'Webcam con resolución 1080p', 75.99, 0.15, TRUE, '2024-01-10', gen_random_uuid(), '10.0.0.5', 'FF:EE:DD:CC:BB:AA', ARRAY['periferico', 'video'], '{"brand": "ClearView", "resolution": "1920x1080"}', POINT(34.05, -118.24), E'\\x87654321');
