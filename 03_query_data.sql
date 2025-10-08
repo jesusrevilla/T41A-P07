@@ -1,6 +1,6 @@
-SELECT name, metadata ->> 'brand' AS brand
+SELECT name, metadata 
 FROM data_types_demo
-WHERE available = TRUE AND metadata ? 'brand';
+WHERE available = TRUE AND CAST(metadata AS TEXT) LIKE '%"brand":%';
 
 SELECT name, launch_date
 FROM data_types_demo
