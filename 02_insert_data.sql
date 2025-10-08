@@ -1,1 +1,46 @@
-
+INSERT INTO data_types_demo (
+    name, 
+    description, 
+    price, 
+    discount, 
+    available, 
+    launch_date, 
+    uuid_col, 
+    ip_address, 
+    mac_address, 
+    tags, 
+    metadata, 
+    coordinates, 
+    file_data
+) 
+VALUES 
+(
+    'Producto1',
+    'Descripción del producto 1',
+    100.50,
+    0.10,
+    TRUE,
+    '2024-03-01',
+    '12345678-1234-1234-1234-123456789abc',
+    '192.168.1.10',
+    'aa:bb:cc:dd:ee:ff',
+    ARRAY['tag1', 'tag2', 'tag3'],
+    '{"brand": "Marca1", "modelo": "ModeloA", "especificaciones": {"color": "rojo", "peso": "1kg"}}',
+    POINT(40.123, -74.456),
+    E'\\x6461746F7362696E6172696F7331'
+),
+(
+    'Producto2',
+    'Descripción del producto 2',
+    200.75,
+    0.15,
+    TRUE,
+    '2024-02-15',
+    '22345678-1234-1234-1234-123456789abc',
+    '10.0.0.20',
+    '11:22:33:44:55:66',
+    ARRAY['tag2', 'tag4', 'tag5'],
+    '{"brand": "Marca2", "modelo": "ModeloB", "especificaciones": {"color": "azul", "peso": "2kg"}}',
+    POINT(34.567, -118.890),
+    E'\\x6461746F7362696E6172696F7332'
+);
