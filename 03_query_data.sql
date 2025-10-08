@@ -22,8 +22,7 @@ SELECT
     name,
     tags
 FROM data_types_demo
-WHERE 'tecnología' = ANY(tags)
-   OR 'gaming' = ANY(tags);
+WHERE 'tag1' = ANY(tags);
 
 -- Muestra IP y dirección MAC
 SELECT 
