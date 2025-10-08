@@ -42,5 +42,4 @@ INSERT INTO data_types_demo (
     '{"brand": "Marca2", "modelo": "ModeloB"}',
     POINT(34.567, -118.890),
     E'\\x6461746F7362696E6172696F7332'
-
 );
