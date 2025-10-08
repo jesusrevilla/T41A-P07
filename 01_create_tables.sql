@@ -20,3 +20,4 @@ CREATE TABLE data_types_demo (
     coordinates POINT,
     file_data BYTEA
 );
+
