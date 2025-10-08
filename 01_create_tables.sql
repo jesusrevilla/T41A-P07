@@ -4,7 +4,7 @@ CREATE TABLE data_types_demo (
     name VARCHAR(255) NOT NULL,
     description TEXT,
     price NUMERIC(10,2),
-    discount FLOAT,
+    discount DOUBLE PRECISION,
     available BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP DEFAULT NOW(),
     launch_date DATE,
