@@ -1,5 +1,5 @@
 -- 01_create_tables.sql
--- Creación de la tabla data_types_demo con todos los tipos requeridos
+-- Creación de la tabla data_types_demo con todos los tipos requerido
 
 DROP TABLE IF EXISTS data_types_demo;
 
