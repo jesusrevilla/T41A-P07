@@ -13,7 +13,7 @@ VALUES
  ARRAY['electronics','peripheral'], '{"brand":"Clicky","dpi":16000}'::jsonb,
  '(0,0)', '\xCAFE'),
 
--- 3) Inactivo, sin brand (para contrastar)
+-- 3) Inactivo
 ('Libro SQL', 'Guía de PostgreSQL', 25.00, 0.00, FALSE, '2023-05-01',
  'f47ac10b-58cc-4372-a567-0e02b2c3d479', '203.0.113.5', 'AA:BB:CC:DD:EE:03',
  ARRAY['books','database'], '{"author":"Jane Doe"}'::jsonb,
