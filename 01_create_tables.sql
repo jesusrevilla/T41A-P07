@@ -1,4 +1,6 @@
 DROP TABLE IF EXISTS data_types_demo;
+
+
 CREATE TABLE data_types_demo (
     id            SERIAL PRIMARY KEY,                                  -- integer (auto-increment)
     name          VARCHAR(120)         NOT NULL,                        -- character varying
@@ -17,6 +19,7 @@ CREATE TABLE data_types_demo (
     file_data     BYTEA                                                 -- bytea
 );
 
-CREATE INDEX IF NOT EXISTS idx_demo_available ON data_types_demo(available);
-CREATE INDEX IF NOT EXISTS idx_demo_metadata_brand ON data_types_demo USING GIN (metadata);
-CREATE INDEX IF NOT EXISTS idx_demo_tags ON data_types_demo USING GIN (tags);
+
+CREATE INDEX IF NOT EXISTS idx_demo_available       ON data_types_demo(available);
+CREATE INDEX IF NOT EXISTS idx_demo_metadata_brand  ON data_types_demo USING GIN (metadata);
+CREATE INDEX IF NOT EXISTS idx_demo_tags            ON data_types_demo USING GIN (tags);
