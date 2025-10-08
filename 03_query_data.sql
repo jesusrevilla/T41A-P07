@@ -1,3 +1,6 @@
+SELECT 1;
+
+-- 1) Productos disponibles
 SELECT id, name, metadata->>'brand' AS brand, price, discount
 FROM data_types_demo
 WHERE available = TRUE
@@ -6,7 +9,7 @@ WHERE available = TRUE
 -- 2) Artículos lanzados después
 SELECT id, name, launch_date
 FROM data_types_demo
-WHERE launch_date > DATE '2025-10-07'
+WHERE launch_date > DATE '2025-01-01'
 ORDER BY launch_date;
 
 -- 3) Búsqueda por tag
