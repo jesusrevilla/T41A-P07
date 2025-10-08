@@ -6,10 +6,11 @@ import os
 
 SQL_FILE_PATH = "03_query_data.sql"
 
-class TestDataTypesDemo(unittest.TestCase):
+class TestDataTypesDemo(unittest.TestCase)
     @classmethod
     def setUpClass(cls):
-        cls.conn = psycopg2.connect(
+        cls.conn = psycopg2.connect
+        (
             dbname="test_db",
             user="postgres",
             password="postgres",
