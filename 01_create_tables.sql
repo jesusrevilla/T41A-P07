@@ -13,5 +13,5 @@ CREATE TABLE data_types_demo (
     tags TEXT[], -- Array of text
     metadata JSONB, -- JSON data
     coordinates POINT, -- Geometric type
-    file_data BYTEA -- Binary data
+    file_data BYTEA -- Binary dat
 );
