@@ -1,5 +1,7 @@
 
--- 03 Query
+-- 03 QUERY
+
+-- \bSELECT\b
 
 -- 1. Productos disponibles con información de marca (brand) en metadata
 SELECT * 
