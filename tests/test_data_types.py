@@ -23,16 +23,17 @@ class TestDataTypesDemo(unittest.TestCase):
         cls.cursor.close()
         cls.conn.close()
 
-    def test_table_exists(self):
+    def test_tabla_existe(self):
         self.cursor.execute("""
             SELECT EXISTS (
-                SELECT FROM information_schema.tables WHERE table_name = 'data_types_demo'
+                SELECT FROM information_schema.tables
+                WHERE table_name = 'data_types_demo'
             );
         """)
         self.assertTrue(self.cursor.fetchone()[0])
 
-    def test_column_types(self):
-        expected_types = {
+    def test_tipos_de_columnas(self):
+        tipos_esperados = {
             'id': 'integer',
             'name': 'character varying',
             'description': 'text',
@@ -50,37 +51,38 @@ class TestDataTypesDemo(unittest.TestCase):
             'file_data': 'bytea'
         }
         self.cursor.execute("""
-            SELECT column_name, data_type FROM information_schema.columns
+            SELECT column_name, data_type
+            FROM information_schema.columns
             WHERE table_name = 'data_types_demo';
         """)
-        columns = dict(self.cursor.fetchall())
-        for col, dtype in expected_types.items():
-            self.assertIn(col, columns)
-            self.assertTrue(dtype in columns[col], f"{col} should be {dtype}")
+        columnas = dict(self.cursor.fetchall())
+        for columna, tipo in tipos_esperados.items():
+            self.assertIn(columna, columnas)
+            self.assertTrue(tipo in columnas[columna], f"{columna} debe ser de tipo {tipo}")
 
-    def test_sample_data_values(self):
+    def test_valores_de_muestra(self):
         self.cursor.execute("SELECT * FROM data_types_demo LIMIT 1;")
-        row = self.cursor.fetchone()
-        self.assertIsInstance(row[0], int)  # id
-        self.assertIsInstance(row[1], str)  # name
-        self.assertIsInstance(row[2], str)  # description
-        self.assertIsNotNone(row[6])        # created_at
-        self.assertIsNotNone(row[7])        # launch_date
-        self.assertRegex(str(row[8]), r'^[0-9a-fA-F-]{36}$')  # UUID
-        ipaddress.ip_address(row[9])        # IP address
-        self.assertRegex(str(row[10]), r'^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$')  # MAC
-        self.assertIsInstance(row[11], list)  # tags
-        self.assertIsInstance(row[12], dict)  # JSONB
-        self.assertRegex(str(row[13]), r'^\([0-9\.\-]+,[0-9\.\-]+\)$')  # point
-        self.assertIsInstance(row[14], (bytes, memoryview))  # bytea
+        fila = self.cursor.fetchone()
+        self.assertIsInstance(fila[0], int)  # id
+        self.assertIsInstance(fila[1], str)  # name
+        self.assertIsInstance(fila[2], str)  # description
+        self.assertIsNotNone(fila[6])        # created_at
+        self.assertIsNotNone(fila[7])        # launch_date
+        self.assertRegex(str(fila[8]), r'^[0-9a-fA-F-]{36}$')  # UUID
+        ipaddress.ip_address(fila[9])        # IP address
+        self.assertRegex(str(fila[10]), r'^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$')  # MAC
+        self.assertIsInstance(fila[11], list)  # tags
+        self.assertIsInstance(fila[12], dict)  # metadata
+        self.assertRegex(str(fila[13]), r'^\([0-9\.\-]+,[0-9\.\-]+\)$')  # coordinates
+        self.assertIsInstance(fila[14], (bytes, memoryview))  # file_data
 
-    def test_sql_file_exists_and_has_queries(self):
-        self.assertTrue(os.path.exists(SQL_FILE_PATH), f"{SQL_FILE_PATH} does not exist")
+    def test_archivo_sql_existe_y_tiene_consultas(self):
+        self.assertTrue(os.path.exists(SQL_FILE_PATH), f"El archivo {SQL_FILE_PATH} no existe")
         with open(SQL_FILE_PATH, 'r', encoding='utf-8') as f:
-            content = f.read().strip()
-        self.assertGreater(len(content), 0, "SQL file is empty")
-        # Check for at least one SQL statement keyword
-        self.assertRegex(content.upper(), r'\\b(SELECT|INSERT|UPDATE|DELETE|CREATE)\\b', "SQL file must contain valid SQL statements")
+            contenido = f.read().strip()
+        self.assertGreater(len(contenido), 0, "El archivo SQL está vacío")
+        self.assertRegex(contenido.upper(), r'\b(SELECT|INSERT|UPDATE|DELETE|CREATE)\b',
+                         "El archivo SQL debe contener sentencias válidas")
 
 if __name__ == '__main__':
     unittest.main()
