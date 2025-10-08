@@ -16,7 +16,6 @@ INSERT INTO data_types_demo (
     coordinates,
     file_data
 )
-  
 VALUES (
     'Super Widget',
     'Un producto con múltiples tipos de datos',
@@ -32,3 +31,4 @@ VALUES (
     '(10.5,20.7)',
     decode('DEADBEEF', 'hex')
 );
+
