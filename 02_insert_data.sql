@@ -1,1 +1,52 @@
-
+INSERT INTO data_types_demo (
+    name, description, price, discount, available,
+    created_at, launch_date, uuid_col, ip_address,
+    mac_address, tags, metadata, coordinates, file_data
+) VALUES (
+    'Prod 1',
+    'Descripción de prueba 1',
+    99.99,
+    10.5,
+    TRUE,
+    '2025-10-07 12:00:00',
+    '2025-11-01',
+    '123e4567-e89b-12d3-a456-426614174000',
+    '192.168.1.100',
+    '08:00:2b:01:02:03',
+    ARRAY['tag1', 'tag2', 'tag3'],
+    '{"key1": "value1", "key2": 2}'::jsonb,
+    POINT(12.34, 56.78),
+    decode('48656c6c6f20576f726c64', 'hex')
+),
+(
+    'Prod 2',
+    'Descripción de prueba 2',
+    150.75,
+    5.25,
+    FALSE,
+    '2025-09-15 08:30:00',
+    '2025-10-20',
+    '987e6543-e21b-34d3-b789-123456789abc',
+    '10.0.0.5',
+    '0A:1B:2C:3D:4E:5F',
+    ARRAY['premium', 'nuevo'],
+    '{"stock": 50, "status": "disponible"}'::jsonb,
+    POINT(-45.67, 89.01),
+    decode('5465737420646174612032', 'hex')
+),
+(
+    'Prod 3',
+    'Descripcion de prueba 3',
+    29.99,
+    0.0,
+    TRUE,
+    '2025-10-01 15:45:00',
+    '2025-12-01',
+    '456e7890-a12b-56d3-c789-abcdef123456',
+    '172.16.254.1',
+    'FF:EE:DD:CC:BB:AA',
+    ARRAY['economico', 'popular'],
+    '{"rating": 4.5, "reviews": 120}'::jsonb,
+    POINT(0, 0),
+    decode('536f6d652062617369632064617461', 'hex')
+);
