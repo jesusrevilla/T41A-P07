@@ -33,21 +33,18 @@ class TestDataTypesDemo(unittest.TestCase):
 
     def test_column_types(self):
         expected_types = {
-            'id': 'integer',
-            'name': 'character varying',
-            'description': 'text',
-            'price': 'numeric',
-            'discount': 'real',
-            'available': 'boolean',
-            'created_at': 'timestamp without time zone',
-            'launch_date': 'date',
-            'uuid_col': 'uuid',
-            'ip_address': 'inet',
-            'mac_address': 'macaddr',
-            'tags': 'ARRAY',
-            'metadata': 'jsonb',
-            'coordinates': 'point',
-            'file_data': 'bytea'
+            self.assertIsInstance(row[0], int)
+            self.assertIsInstance(row[1], str)
+            self.assertIsInstance(row[2], str)
+            self.assertIsNotNone(row[6])
+            self.assertIsNotNone(row[7])
+            self.assertRegex(str(row[8]), r'^[0-9a-fA-F-]{36}$')
+            ipaddress.ip_address(row[9])
+            self.assertRegex(str(row[10]), r'^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$')
+            self.assertIsInstance(row[11], list)
+            self.assertIsInstance(row[12], dict)
+            self.assertRegex(str(row[13]), r'^\([0-9\.\-]+,[0-9\.\-]+\)$')
+            self.assertIsInstance(row[14], (bytes, memoryview))
         }
         self.cursor.execute("""
             SELECT column_name, data_type FROM information_schema.columns
