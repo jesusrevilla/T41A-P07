@@ -26,4 +26,3 @@ ORDER BY id;
 SELECT id, x(coordinates) AS x, y(coordinates) AS y
 FROM data_types_demo
 ORDER BY id;
-
