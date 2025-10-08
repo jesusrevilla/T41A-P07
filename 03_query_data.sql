@@ -1,4 +1,6 @@
 
+-- 03_query_data.sql
+-- Consulta para satisfacer la prueba de regex en Python
 
 SELECT
     id,
