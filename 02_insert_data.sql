@@ -1,5 +1,5 @@
 -- 02_insert_data.sql
--- Inserción de datos de ejemplo en la tabla data_types_demo
+-- Inserción de datos de ejemplo en la tabla data_types_demo.
 
 INSERT INTO data_types_demo (
     name, description, price, discount, available, launch_date,
