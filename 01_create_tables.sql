@@ -1,20 +1,17 @@
--- 0) Extensión para UUID con gen_random_uuid()
-CREATE EXTENSION IF NOT EXISTS pgcrypto;
-
 CREATE TABLE data_types_demo (
-    id              BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY, -- entero auto-incremental
-    name            VARCHAR(150) NOT NULL,                           -- string variable NOT NULL
-    description     TEXT,                                            -- texto largo
-    price           NUMERIC(10,2),                                   -- número de precisión fija
-    discount        DOUBLE PRECISION,                                -- flotante
-    available       BOOLEAN NOT NULL DEFAULT TRUE,                   -- booleano con DEFAULT
-    created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),              -- fecha y hora con zona, DEFAULT NOW()
-    launch_date     DATE,                                            -- solo fecha
-    uuid_col        UUID NOT NULL DEFAULT gen_random_uuid(),         -- UUID
-    ip_address      INET,                                            -- dirección IP (IPv4/IPv6)
-    mac_address     MACADDR,                                         -- dirección MAC
-    tags            TEXT[],                                          -- arreglo de texto
-    metadata        JSONB,                                           -- JSONB (más potente para consultas)
-    coordinates     POINT,                                           -- tipo geométrico (punto)
-    file_data       BYTEA                                            -- datos binarios
+    id              SERIAL PRIMARY KEY,                 -- integer auto-increment
+    name            VARCHAR(150) NOT NULL,              -- character varying NOT NULL
+    description     TEXT,                               -- text
+    price           NUMERIC(10,2),                      -- numeric
+    discount        REAL,                               -- real (float4)
+    available       BOOLEAN NOT NULL DEFAULT TRUE,      -- boolean DEFAULT TRUE
+    created_at      TIMESTAMP NOT NULL DEFAULT NOW(),   -- timestamp without time zone
+    launch_date     DATE,                               -- date
+    uuid_col        UUID,                               -- uuid
+    ip_address      INET,                               -- inet
+    mac_address     MACADDR,                            -- macaddr
+    tags            TEXT[],                             -- ARRAY (text[])
+    metadata        JSONB,                              -- jsonb
+    coordinates     POINT,                              -- point
+    file_data       BYTEA                               -- bytea
 );
