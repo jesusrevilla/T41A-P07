@@ -1,44 +1,13 @@
--- Insertar producto 1
 INSERT INTO data_types_demo (
-    name, description, price, discount, available,
-    launch_date, uuid_col, ip_address, mac_address,
-    tags, metadata, coordinates, file_data
-)
-VALUES (
-    'Laptop Pro X',
-    'Laptop de alto rendimiento con pantalla retina.',
-    1299.99,
-    0.10,
-    TRUE,
-    '2025-08-01',
-    '123e4567-e89b-12d3-a456-426614174000',
-    '192.168.1.10',
-    'AA:BB:CC:11:22:33',
-    ARRAY['tecnología', 'portátil', 'oferta'],
-    '{"brand": "TechCorp", "color": "gris", "ram": "16GB"}',
-    'POINT(-58.38 -34.60)',
-    'ContenidoBinario1'::bytea
+    name, description, price, discount, available, launch_date,
+    ip_address, mac_address, tags, metadata, coordinates, file_data
+) VALUES (
+    'Producto A', 'Descripción del producto A', 100.00, 10.5, TRUE, '2025-09-15',
+    '192.168.1.10', '08:00:27:12:34:56', ARRAY['tecnología', 'nuevo'],
+    '{"brand": "TechCorp", "color": "negro"}', '(10.5, 20.5)', decode('DEADBEEF', 'hex')
+),
+(
+    'Producto B', 'Otro producto más', 59.99, 5.0, FALSE, '2025-06-01',
+    '10.0.0.5', 'AA:BB:CC:DD:EE:FF', ARRAY['hogar', 'oferta'],
+    '{"brand": "HomeGood", "color": "blanco"}', '(5.2, 7.8)', decode('CAFEBABE', 'hex')
 );
-
--- Insertar producto 2
-INSERT INTO data_types_demo (
-    name, description, price, discount, available,
-    launch_date, uuid_col, ip_address, mac_address,
-    tags, metadata, coordinates, file_data
-)
-VALUES (
-    'Smartphone Z',
-    'Teléfono inteligente con cámara 108MP.',
-    799.49,
-    0.05,
-    FALSE,
-    '2024-12-15',
-    '123e4567-e89b-12d3-a456-426614174001',
-    '10.0.0.5',
-    'CC:DD:EE:44:55:66',
-    ARRAY['móvil', 'teléfono', 'android'],
-    '{"brand": "PhoneMax", "color": "negro", "almacenamiento": "128GB"}',
-    'POINT(-99.13 19.43)',
-    'ContenidoBinario2'::bytea
-);
-
