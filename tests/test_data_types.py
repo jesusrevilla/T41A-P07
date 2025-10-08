@@ -61,26 +61,25 @@ class TestDataTypesDemo(unittest.TestCase):
     def test_sample_data_values(self):
         self.cursor.execute("SELECT * FROM data_types_demo LIMIT 1;")
         row = self.cursor.fetchone()
-        self.assertIsInstance(row[0], int)  # id
-        self.assertIsInstance(row[1], str)  # name
-        self.assertIsInstance(row[2], str)  # description
-        self.assertIsNotNone(row[6])        # created_at
-        self.assertIsNotNone(row[7])        # launch_date
-        self.assertRegex(str(row[8]), r'^[0-9a-fA-F-]{36}$')  # UUID
-        ipaddress.ip_address(row[9])        # IP address
-        self.assertRegex(str(row[10]), r'^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$')  # MAC
-        self.assertIsInstance(row[11], list)  # tags
-        self.assertIsInstance(row[12], dict)  # JSONB
-        self.assertRegex(str(row[13]), r'^\([0-9\.\-]+,[0-9\.\-]+\)$')  # point
-        self.assertIsInstance(row[14], (bytes, memoryview))  # bytea
+        self.assertIsInstance(row[0], int)
+        self.assertIsInstance(row[1], str)
+        self.assertIsInstance(row[2], str)
+        self.assertIsNotNone(row[6])
+        self.assertIsNotNone(row[7])
+        self.assertRegex(str(row[8]), r'^[0-9a-fA-F-]{36}$')
+        ipaddress.ip_address(row[9])
+        self.assertRegex(str(row[10]), r'^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$')
+        self.assertIsInstance(row[11], list)
+        self.assertIsInstance(row[12], dict)
+        self.assertRegex(str(row[13]), r'^\([0-9\.\-]+,[0-9\.\-]+\)$')
+        self.assertIsInstance(row[14], (bytes, memoryview))
 
     def test_sql_file_exists_and_has_queries(self):
         self.assertTrue(os.path.exists(SQL_FILE_PATH), f"{SQL_FILE_PATH} does not exist")
         with open(SQL_FILE_PATH, 'r', encoding='utf-8') as f:
             content = f.read().strip()
         self.assertGreater(len(content), 0, "SQL file is empty")
-        # Check for at least one SQL statement keyword
-        self.assertRegex(content.upper(), r'\\b(SELECT|INSERT|UPDATE|DELETE|CREATE)\\b', "SQL file must contain valid SQL statements")
+        self.assertRegex(content.upper(), r'\b(SELECT|INSERT|UPDATE|DELETE|CREATE)\b', "SQL file must contain valid SQL statements")
 
 if __name__ == '__main__':
     unittest.main()
