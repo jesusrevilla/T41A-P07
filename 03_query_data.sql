@@ -10,8 +10,6 @@ WHERE
     available = TRUE
     AND metadata ? 'brand';
 
-
-
 SELECT
     id,
     name,
@@ -23,8 +21,6 @@ WHERE
 ORDER BY
     launch_date;
 
-
-
 SELECT
     id,
     name,
@@ -33,8 +29,6 @@ FROM
     data_types_demo
 WHERE
     tags @> ARRAY['electronics'];
-
-
 
 SELECT
     id,
@@ -45,10 +39,11 @@ FROM
     data_types_demo;
 
 
-
 SELECT
     id,
     name,
-    coordinates
+    coordinates,
+    coordinates[0] AS coord_x,
+    coordinates[1] AS coord_y
 FROM
     data_types_demo;
