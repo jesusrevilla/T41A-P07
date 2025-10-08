@@ -8,7 +8,7 @@ CREATE TABLE data_types_demo (
     name            VARCHAR(150) NOT NULL,         -- Variable-length string NOT NULL
     description     TEXT,                          -- Large text
     price           NUMERIC(12,2),                 -- Fixed precision number
-    discount        DOUBLE PRECISION,              -- Floating point
+    discount        REAL,                          -- <-- El test espera 'real'
     available       BOOLEAN DEFAULT TRUE,          -- Boolean DEFAULT TRUE
     created_at      TIMESTAMP WITHOUT TIME ZONE DEFAULT NOW(), -- Date and time DEFAULT NOW()
     launch_date     DATE,                          -- Date only
@@ -20,4 +20,3 @@ CREATE TABLE data_types_demo (
     coordinates     POINT,                         -- Geometric type
     file_data       BYTEA                          -- Binary data
 );
-
