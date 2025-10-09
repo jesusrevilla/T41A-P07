@@ -11,7 +11,7 @@ CREATE TABLE data_types_demo (
     ip_address INET,                           -- IP address
     mac_address MACADDR,                       -- MAC address
     tags TEXT[],                               -- Array of text
-    metadata JSON,                             -- JSON data
+    metadata JSONB,                             -- JSON data
     coordinates POINT,                         -- Geometric type
     file_data BYTEA                            -- Binary data
 );
