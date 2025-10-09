@@ -1,1 +1,32 @@
-
+INSERT INTO data_types_demo (
+  name, description, price, discount, available, 
+    launch_date, uuid_col, ip_address, mac_address, tags, 
+    metadata, coordinates, file_data) 
+    VALUES (
+    'Producto A',
+    'Este es un producto de prueba A.',
+    99.99,
+    10.00,
+    TRUE,
+    '2025-10-08',
+    '550e8400-e29b-41d4-a716-446655440000',
+    '192.168.1.1',
+    '08:00:27:00:4c:aa',
+    ARRAY['nuevo', 'oferta'],
+    '{"brand" : "Marca1" ,"color": "rojo", "peso": "1kg"}',
+    '(10.5, 20.5)', 
+    decode('546573745F66696C655F31', 'hex')), 
+    ('Producto B',
+    'Este es un producto de prueba B.',
+    149.49,
+    25.75,
+    FALSE,
+    '2025-10-09',
+    '123e4567-e89b-12d3-a456-426614174000',
+    '10.0.0.5',
+    '08:00:27:ab:cd:ef',
+    ARRAY['edición limitada', 'premium'],
+    '{"brand" : "Marca2", "color": "azul", "dimensiones": {"alto": "10cm", "ancho": "5cm"}}',
+    '(5.2, 8.3)', 
+    decode('546573745F66696C655F32', 'hex')
+);
