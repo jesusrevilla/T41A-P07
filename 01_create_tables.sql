@@ -3,7 +3,7 @@ CREATE TABLE data_types_demo (
     name VARCHAR(100) NOT NULL,                -- Variable-length string
     description TEXT,                          -- Large text
     price NUMERIC(10,2),                       -- Fixed precision number
-    discount FLOAT,                            -- Floating point
+    discount REAL,                            -- Floating point
     available BOOLEAN DEFAULT TRUE,            -- Boolean
     created_at TIMESTAMP DEFAULT NOW(),        -- Date and time
     launch_date DATE,                          -- Date only
