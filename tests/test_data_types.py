@@ -71,7 +71,7 @@ class TestDataTypesDemo(unittest.TestCase):
         self.assertRegex(str(row[10]), r'^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$')  # MAC
         self.assertIsInstance(row[11], list)  # tags
         self.assertIsInstance(row[12], dict)  # JSONB
-        self.assertRegex(str(row[13]), r'^\([0-9\.\-]+,[0-9\.\-]+\)$')  # point
+        self.assertRegex(str(row[13]), r'^\([-+]?[0-9\.]+,[-+]?[0-9\.]+\)$')  # point
         self.assertIsInstance(row[14], (bytes, memoryview))  # bytea
 
     def test_sql_file_exists_and_has_queries(self):
